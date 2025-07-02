@@ -63,10 +63,12 @@
         </a>
     </div>
 
+    <audio id="changeSound" src="audio/change.mp3" preload="auto"></audio>
+
     <script>
         // Automatically generate video entries for video (1) to video (100)
         const media = [];
-        for (let i = 1; i <= 30; i++) {
+        for (let i = 1; i <= 29; i++) {
             media.push({ type: 'video', src: `video/video (${i}).mp4` });
         }
         // Add images here if needed
@@ -74,7 +76,13 @@
         // media.push({ type: 'image', src: 'images/pic2.png' });
 
         function showRandomMediaForScreen(videoId, videoSourceId, imgId) {
+            const changeSound = document.getElementById('changeSound');
             function show() {
+                // Play sound on every change
+                if (changeSound) {
+                    changeSound.currentTime = 0;
+                    changeSound.play();
+                }
                 const randomIndex = Math.floor(Math.random() * media.length);
                 const item = media[randomIndex];
                 const video = document.getElementById(videoId);
