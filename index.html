@@ -129,6 +129,16 @@ function showRandomMediaForScreen(videoId, videoSourceId, imgId) {
 }
 
 document.getElementById('playButton').addEventListener('click', function() {
+    // Prime the audio for mobile browsers
+    const changeSound = document.getElementById('changeSound');
+    if (changeSound) {
+        changeSound.play().then(() => {
+            changeSound.pause();
+            changeSound.currentTime = 0;
+        }).catch(() => {
+            // Ignore errors (user gesture will allow future play)
+        });
+    }
     document.getElementById('playButton').style.display = 'none';
     showRandomMediaForScreen('randomVideo1', 'videoSource1', 'randomImage1');
 });
