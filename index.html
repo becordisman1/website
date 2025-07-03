@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>dj epistemology - Portfolio</title>
-    <link rel="stylesheet" href="styles/buttons.css"> <!-- Make sure this file exists -->
+    <link rel="stylesheet" href="styles/buttons.css">
     <style>
         h1 {
             font-family: monospace;
@@ -26,7 +26,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #000;
+            /* Doggo background image, scaled down and centered */
+            background: #000 url('images/doggo.png') no-repeat center center fixed;
+            background-size: contain;
         }
         .center-container {
             display: flex;
@@ -48,6 +50,7 @@
 </head>
 
 <body>
+    <div id="three-corner" style="position:fixed;top:0;right:0;width:320px;height:240px;z-index:10;"></div>
     <div class="center-container">
         <h1>dj epistemology</h1>
         <h2>(not a dj)</h2>
@@ -56,11 +59,12 @@
 
         <div id="mediaContainer">
             <div class="mediaScreen">
+                
+                <img id="randomImage1" src="" alt="Random" style="display:none; max-width:480px; max-height:360px;" />
                 <video id="randomVideo1" autoplay loop playsinline width="960" height="720" style="display:none">
-                    <source id="videoSource1" src="videos/float1.mp4" type="video/mp4">
+                    <source id="videoSource1" src="video/video (1).mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                <img id="randomImage1" src="" alt="Random" style="display:none; max-width:960px; max-height:720px;" />
             </div>
         </div>
 
@@ -73,59 +77,59 @@
 
     <audio id="changeSound" src="audio/change.mp3" preload="auto"></audio>
 
-    <script>
-        // Automatically generate video entries for video (1) to video (100)
-        const media = [];
-        for (let i = 1; i <= 30; i++) {
-            media.push({ type: 'video', src: `video/video (${i}).mp4` });
-        }
-        // Add images here if needed
-        // media.push({ type: 'image', src: 'images/pic1.jpg' });
-        // media.push({ type: 'image', src: 'images/pic2.png' });
+    <!-- Move script tags to the end of body for correct loading order -->
+    <script type="module">
+// Automatically generate video entries for video (1) to video (100)
+const media = [];
+for (let i = 1; i <= 30; i++) {
+    media.push({ type: 'video', src: `video/video (${i}).mp4` });
+}
+// Add images here if needed
+// media.push({ type: 'image', src: 'images/pic1.jpg' });
+// media.push({ type: 'image', src: 'images/pic2.png' });
 
-        function showRandomMediaForScreen(videoId, videoSourceId, imgId) {
-            const changeSound = document.getElementById('changeSound');
-            function show() {
-                // Play sound on every change
-                if (changeSound) {
-                    changeSound.currentTime = 0;
-                    changeSound.play();
-                }
-                const randomIndex = Math.floor(Math.random() * media.length);
-                const item = media[randomIndex];
-                const video = document.getElementById(videoId);
-                const videoSource = document.getElementById(videoSourceId);
-                const img = document.getElementById(imgId);
-                if (item.type === 'video') {
-                    videoSource.src = item.src;
-                    video.style.display = '';
-                    img.style.display = 'none';
-                    video.load();
-                    video.onloadedmetadata = function() {
-                        if (video.duration && !isNaN(video.duration)) {
-                            video.currentTime = Math.random() * video.duration;
-                        }
-                        video.muted = false;
-                        video.play();
-                    };
-                } else {
-                    img.src = item.src;
-                    img.style.display = '';
-                    video.style.display = 'none';
-                }
-                // Random time between 3 and 50 seconds
-                const nextTime = Math.floor(Math.random() * 33 + 6) * 1000;
-                setTimeout(show, nextTime);
-            }
-            show();
+function showRandomMediaForScreen(videoId, videoSourceId, imgId) {
+    const changeSound = document.getElementById('changeSound');
+    function show() {
+        // Play sound on every change
+        if (changeSound) {
+            changeSound.currentTime = 0;
+            changeSound.play();
         }
+        const randomIndex = Math.floor(Math.random() * media.length);
+        const item = media[randomIndex];
+        const video = document.getElementById(videoId);
+        const videoSource = document.getElementById(videoSourceId);
+        const img = document.getElementById(imgId);
+        if (item.type === 'video') {
+            videoSource.src = item.src;
+            video.style.display = '';
+            img.style.display = 'none';
+            video.load();
+            video.onloadedmetadata = function() {
+                if (video.duration && !isNaN(video.duration)) {
+                    video.currentTime = Math.random() * video.duration;
+                }
+                video.muted = false;
+                video.play();
+            };
+        } else {
+            img.src = item.src;
+            img.style.display = '';
+            video.style.display = 'none';
+        }
+        // Random time between 3 and 50 seconds
+        const nextTime = Math.floor(Math.random() * 33 + 6) * 1000;
+        setTimeout(show, nextTime);
+    }
+    show();
+}
 
-        document.getElementById('playButton').addEventListener('click', function() {
-            document.getElementById('playButton').style.display = 'none';
-            showRandomMediaForScreen('randomVideo1', 'videoSource1', 'randomImage1');
-        });
-    </script>
+document.getElementById('playButton').addEventListener('click', function() {
+    document.getElementById('playButton').style.display = 'none';
+    showRandomMediaForScreen('randomVideo1', 'videoSource1', 'randomImage1');
+});
+</script>
 </body>
-
 </html>
 
