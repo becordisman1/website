@@ -30,6 +30,9 @@
             background: #000 url('images/doggo.png') no-repeat center center fixed;
             background-size: contain;
         }
+        body.hide-doggo {
+            background: #000 !important;
+        }
         .center-container {
             display: flex;
             flex-direction: column;
@@ -91,7 +94,6 @@ for (let i = 1; i <= 30; i++) {
 function showRandomMediaForScreen(videoId, videoSourceId, imgId) {
     const changeSound = document.getElementById('changeSound');
     function show() {
-        // Play sound on every change
         if (changeSound) {
             changeSound.currentTime = 0;
             changeSound.play();
@@ -102,6 +104,7 @@ function showRandomMediaForScreen(videoId, videoSourceId, imgId) {
         const videoSource = document.getElementById(videoSourceId);
         const img = document.getElementById(imgId);
         if (item.type === 'video') {
+            document.body.classList.add('hide-doggo'); // Hide doggo bg
             videoSource.src = item.src;
             video.style.display = '';
             img.style.display = 'none';
@@ -114,11 +117,11 @@ function showRandomMediaForScreen(videoId, videoSourceId, imgId) {
                 video.play();
             };
         } else {
+            document.body.classList.remove('hide-doggo'); // Show doggo bg
             img.src = item.src;
             img.style.display = '';
             video.style.display = 'none';
         }
-        // Random time between 3 and 50 seconds
         const nextTime = Math.floor(Math.random() * 33 + 6) * 1000;
         setTimeout(show, nextTime);
     }
