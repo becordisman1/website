@@ -16,8 +16,8 @@ h2 {
     font-family: monospace;
     justify-content: center;
     font-weight: bold;
-    font-size: 2rem;
-    color: #abd82f;
+    font-size: 1rem;
+    color: #6270e9;
     align-items: center;
     text-shadow: 4px 6px 16px #000c, 0 2px 8px #000a;
 }
@@ -44,6 +44,7 @@ body.hide-doggo {
     justify-content: center;
     align-items: center;
     height: fit-content;
+    margin-top: -100px; /* Move video higher, adjust value as needed */
 }
 
 .mediaScreen {
@@ -86,7 +87,9 @@ body.hide-doggo {
 .flexbox-item-3{
     min-height: 100%;
     align-items: center;
+    background: linear-gradient(rgba(221, 93, 138, 0.514), rgba(207, 188, 233, 0));
     
+
 }
 .flexbox-item-4{
     min-height: 100%;
@@ -96,14 +99,27 @@ body.hide-doggo {
 .flexbox-item-5{
     min-height: 100%;
     align-items: center;
+    
 
+}
+.flexbox-item-6 {
+    height: 350px; /* or any height you want */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/images/doggo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .flexbox-item-1,
 .flexbox-item-2,
 .flexbox-item-3,
 .flexbox-item-4,
-.flexbox-item-5 {
+.flexbox-item-5,
+.flexbox-item-6 {
     width: 100%;
     min-height: 100%;
     display: flex;

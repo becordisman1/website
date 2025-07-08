@@ -26,12 +26,13 @@
 
 <body>
     <div class="flexbox-container">
+        <div class="flexbox-item-6"></div>
         <div class="flexbox-item-1">
         <div class="flexbox-item-2">
             <h1>dj epistemology</h1>
         </div>
         <div class="flexbox-item-3">
-            <h2>(not a dj)</h2>
+            <h2>(smooth world takeover)</h2>
         </div>
         <div class="flexbox-item-4">
         <button id="playButton"
@@ -109,7 +110,7 @@ function showRandomMediaForScreen(videoId, videoSourceId, imgId) {
 }
 
 document.getElementById('playButton').addEventListener('click', function() {
-    // Prime the audio for mobile browsers
+    // Prime the audio for mobile browsers (optional, not auto-play)
     const changeSound = document.getElementById('changeSound');
     if (changeSound) {
         changeSound.play().then(() => {
@@ -119,7 +120,11 @@ document.getElementById('playButton').addEventListener('click', function() {
             // Ignore errors (user gesture will allow future play)
         });
     }
-    document.getElementById('playButton').style.display = 'none';
+    // Hide play button
+    this.style.display = 'none';
+    // Hide flexbox-item-6
+    const flexbox6 = document.querySelector('.flexbox-item-6', );
+    if (flexbox6) flexbox6.style.display = 'none';
     showRandomMediaForScreen('randomVideo1', 'videoSource1', 'randomImage1');
 });
 </script>
