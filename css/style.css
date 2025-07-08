@@ -1,5 +1,7 @@
 html, body {
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -29,15 +31,11 @@ body {
     justify-content: center;
     align-items: center;
     height: fit-content;
-    
-
 }
 
 body.hide-doggo {
     background: #000 !important;
 }
-
-
 
 #mediaContainer {
     display: flex;
@@ -56,33 +54,40 @@ body.hide-doggo {
 .flexbox-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: fit-content;
-    width: 100%;
-    min-height: 100vh;
-    
+    align-items: center;      /* Center content horizontally inside the container */
+    justify-content: flex-start;  /* Align content to the top */
+    min-width: 400px;
+    max-width: 700px;
+    width: auto;
+    margin: 0 auto;
+    /* Remove min-height: 100vh; */
+    /* Remove or adjust any top margin if present */
 }
+
 .flexbox-item {
     width: 100%;
-    border: 3px solid #ffffff;
+    
 }
 .flexbox-item-1{
     min-height: 100%;
+    border: #fff 3px solid; /* Add a border to the container */
 
-    background-size: contain; /* or cover, or 80% */
-    background-repeat: repeat;
-    background-position: center;
+    
 
 
 }
 .flexbox-item-2{
-    min-height: 100%;
+
+    width: 00px;
     align-items: center;
+    background-size: contain; /* or cover, or 80% */
+    background-repeat: repeat;
+    background-position: center;
     background-image: url('/images/brain.png');
     background-size: contain; /* or cover, or 80% */
     background-repeat: repeat;
     background-position: center;
+    
 }
 .flexbox-item-3{
     min-height: 100%;
@@ -102,29 +107,72 @@ body.hide-doggo {
     
 
 }
-.flexbox-item-6 {
-    height: 350px; /* or any height you want */
+
+.flexbox-item-7 {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('/images/doggo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    height: 10px;
+
+
 }
 
 .flexbox-item-1,
 .flexbox-item-2,
 .flexbox-item-3,
 .flexbox-item-4,
-.flexbox-item-5,
-.flexbox-item-6 {
-    width: 100%;
+.flexbox-item-5
+ {
+    min-width: 600px;
     min-height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 16px 0 0 16px;   /* smaller margin */
+    z-index: 2;
+    width: 180px;            /* smaller width */
+    min-width: 120px;        /* smaller min width */
+    margin-right: 0;
+}
+
+.profile-img {
+    height: 80px;            /* smaller image height */
+    width: 100%;
+    background-image: url('/images/doggo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left;
+    display: block;
+}
+
+.profile-txt {
+    width: 80%;
+    height: auto;            /* let text wrap naturally */
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 0.55rem;      /* smaller font */
+    color: #c6c8d3;
+    text-shadow: 4px 6px 16px #000c, 0 2px 8px #000a;
+    margin-top: 8px;         /* smaller gap */
+}
+
+.main-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;  /* Center the flexbox-container horizontally */
+    width: 100vw;             /* Fill the viewport width */
+    gap: 32px;
+    position: relative;
+    min-height: 100vh;
 }
 
