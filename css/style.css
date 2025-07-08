@@ -44,7 +44,7 @@ body.hide-doggo {
     justify-content: center;
     align-items: center;
     height: fit-content;
-    margin-top: -100px; /* Move video higher, adjust value as needed */
+    margin-top: -80px; /* Move video higher, adjust value as needed */
 }
 
 .mediaScreen {
