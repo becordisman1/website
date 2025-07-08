@@ -1,9 +1,3 @@
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 h1 {
     font-family: monospace;
     align-items: center;
@@ -24,44 +18,62 @@ h2 {
     text-shadow: 4px 6px 16px #000c, 0 2px 8px #000a;
 }
 
-body {
+/* Reset and box-sizing for consistency */
+html, body {
+    margin: 0;
+    padding: 0;
     background-color: #000;
+    box-sizing: border-box;
+    height: auto;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    /* Remove height/min-height, let .main-flex control height */
+}
+
+.main-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100vw;
+    height: 100dvh;
+    gap: 32px;
+    position: static;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+.profile {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: fit-content;
-}
-
-body.hide-doggo {
-    background: #000 !important;
-}
-
-#mediaContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: fit-content;
-    margin-top: -50px; /* Move video higher, adjust value as needed */
-}
-
-.mediaScreen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 16px 0 0 16px; /* Top-left, small left margin */
+    width: 140px;
+    min-width: 100px;
+    z-index: 2;
+    height: auto;
 }
 
 .flexbox-container {
     display: flex;
     flex-direction: column;
-    align-items: center;      /* Center content horizontally inside the container */
-    justify-content: flex-start;  /* Align content to the top */
+    align-items: center;
+    justify-content: flex-start;
     min-width: 400px;
     max-width: 700px;
     width: auto;
-    margin: 0 auto;
-    /* No min-height: 100vh; */
-    /* No top margin */
+    margin: 0;
+    padding: 0;
+    background: transparent;
 }
 
 .flexbox-item {
@@ -69,7 +81,6 @@ body.hide-doggo {
     
 }
 .flexbox-item-1{
-    min-height: 100%;
     border: #fff 3px solid; /* Add a border to the container */
 
     
@@ -78,11 +89,6 @@ body.hide-doggo {
 }
 .flexbox-item-2{
 
-    width: 00px;
-    align-items: center;
-    background-size: contain; /* or cover, or 80% */
-    background-repeat: repeat;
-    background-position: center;
     background-image: url('/images/brain.png');
     background-size: contain; /* or cover, or 80% */
     background-repeat: repeat;
@@ -90,19 +96,16 @@ body.hide-doggo {
     
 }
 .flexbox-item-3{
-    min-height: 100%;
     align-items: center;
     background: linear-gradient(rgba(221, 93, 138, 0.514), rgba(207, 188, 233, 0));
     
 
 }
 .flexbox-item-4{
-    min-height: 100%;
     align-items: center;
     
 }
 .flexbox-item-5{
-    min-height: 100%;
     align-items: center;
     
 
@@ -119,29 +122,12 @@ body.hide-doggo {
 .flexbox-item-2,
 .flexbox-item-3,
 .flexbox-item-4,
-.flexbox-item-5
- {
-    min-width: 600px;
-    min-height: 100%;
+.flexbox-item-5 {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.profile {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: absolute;
-    left: 0;
-    top: 0;
-    margin: 16px 0 0 16px;   /* smaller margin */
-    z-index: 2;
-    width: 180px;            /* smaller width */
-    min-width: 120px;        /* smaller min width */
-    margin-right: 0;
+    width: 100%;
 }
 
 .profile-img {
@@ -163,16 +149,5 @@ body.hide-doggo {
     color: #c6c8d3;
     text-shadow: 4px 6px 16px #000c, 0 2px 8px #000a;
     margin-top: 8px;         /* smaller gap */
-}
-
-.main-flex {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;   /* Align children to the top */
-    justify-content: center;   /* Center horizontally */
-    width: 100vw;
-    gap: 32px;
-    position: relative;
-    min-height: 100vh;
 }
 
