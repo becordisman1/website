@@ -60,8 +60,8 @@ body.hide-doggo {
     max-width: 700px;
     width: auto;
     margin: 0 auto;
-    /* Remove min-height: 100vh; */
-    /* Remove or adjust any top margin if present */
+    /* No min-height: 100vh; */
+    /* No top margin */
 }
 
 .flexbox-item {
@@ -168,9 +168,9 @@ body.hide-doggo {
 .main-flex {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;  /* Center the flexbox-container horizontally */
-    width: 100vw;             /* Fill the viewport width */
+    align-items: flex-start;   /* Align children to the top */
+    justify-content: center;   /* Center horizontally */
+    width: 100vw;
     gap: 32px;
     position: relative;
     min-height: 100vh;
