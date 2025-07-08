@@ -1,44 +1,114 @@
-       h1 {
-            font-family: monospace;
-            font-weight: bold;
-            font-size: 5rem;
-            color: #fff;
-            text-shadow: 4px 6px 16px #000c, 0 2px 8px #000a;
-        }
-        h2 {
-            font-family: monospace;
-            font-weight: bold;
-            font-size: 2rem;
-            color: #abd82f;
-            text-shadow: 4px 6px 16px #000c, 0 2px 8px #000a;
-        }
-        body {
-            min-height: 100vh;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* Doggo background image, scaled down and centered */
-            background: #000 url('images/doggo.png') no-repeat center center fixed;
-            background-size: contain;
-        }
-        body.hide-doggo {
-            background: #000 !important;
-        }
-        .center-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        #mediaContainer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-        .mediaScreen {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+html, body {
+    height: 100%;
+}
+
+h1 {
+    font-family: monospace;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 4px 6px 16px #000c, 0 2px 8px #000a;
+}
+
+h2 {
+    font-family: monospace;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #abd82f;
+    align-items: center;
+    text-shadow: 4px 6px 16px #000c, 0 2px 8px #000a;
+}
+
+body {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
     
+
+}
+
+body.hide-doggo {
+    background: #000 !important;
+}
+
+
+
+#mediaContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+}
+
+.mediaScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flexbox-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    min-height: 100vh;
+    
+}
+.flexbox-item {
+    width: 100%;
+    border: 3px solid #ffffff;
+}
+.flexbox-item-1{
+    min-height: 100%;
+
+    background-size: contain; /* or cover, or 80% */
+    background-repeat: repeat;
+    background-position: center;
+
+
+}
+.flexbox-item-2{
+    min-height: 100%;
+    align-items: center;
+    background-image: url('/images/brain.png');
+    background-size: contain; /* or cover, or 80% */
+    background-repeat: repeat;
+    background-position: center;
+}
+.flexbox-item-3{
+    min-height: 100%;
+    align-items: center;
+    
+}
+.flexbox-item-4{
+    min-height: 100%;
+    align-items: center;
+    
+}
+.flexbox-item-5{
+    min-height: 100%;
+    align-items: center;
+
+}
+
+.flexbox-item-1,
+.flexbox-item-2,
+.flexbox-item-3,
+.flexbox-item-4,
+.flexbox-item-5 {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+

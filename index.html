@@ -6,20 +6,40 @@
     <title>dj epistemology - Portfolio</title>
     <link rel="stylesheet" href="styles/buttons.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        .flexbox-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
 
+        .flexbox-item-1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 
 <body>
-    <div id="three-corner" style="position:fixed;top:0;right:0;width:320px;height:240px;z-index:10;"></div>
-    <div class="center-container">
-        <h1>dj epistemology</h1>
-        <h2>(not a dj)</h2>
-
-        <button id="playButton" style="font-size:2rem; padding:1rem 2rem; margin-bottom:1rem; cursor:pointer;">Play with Sound</button>
-
+    <div class="flexbox-container">
+        <div class="flexbox-item-1">
+        <div class="flexbox-item-2">
+            <h1>dj epistemology</h1>
+        </div>
+        <div class="flexbox-item-3">
+            <h2>(not a dj)</h2>
+        </div>
+        <div class="flexbox-item-4">
+        <button id="playButton"
+            style="font-size:2rem; padding:1rem 2rem; margin-bottom:1rem; cursor:pointer;">Play with Sound
+        </button>
         <div id="mediaContainer">
             <div class="mediaScreen">
-                
+
                 <img id="randomImage1" src="" alt="Random" style="display:none; max-width:480px; max-height:360px;" />
                 <video id="randomVideo1" autoplay loop playsinline width="960" height="720" style="display:none">
                     <source id="videoSource1" src="video/video (1).mp4" type="video/mp4">
@@ -27,12 +47,15 @@
                 </video>
             </div>
         </div>
-
+        <div class="flexbox-item-5">
         <br>
 
         <a href="https://www.youtube.com/@tears_of_boredom" target="_blank" class="youtube-button">
             Visit my YouTube
         </a>
+        </div>
+        </div>
+    </div>
     </div>
 
     <audio id="changeSound" src="audio/change.mp3" preload="auto"></audio>
