@@ -39,28 +39,26 @@ body {
 
 .main-flex {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
+    flex-direction: column;      /* Stack children vertically */
+    align-items: center;         /* Center children horizontally */
+    justify-content: flex-start; /* Align to top */
     width: 100vw;
-    height: 100dvh;
+    min-height: 100dvh;
     gap: 32px;
-    position: static;
     margin: 0;
     padding: 0;
     background: transparent;
 }
 
-.profile {
+.column {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin: 16px 0 0 16px; /* Top-left, small left margin */
-    width: 140px;
-    min-width: 100px;
-    z-index: 2;
-    height: auto;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    width: 100%;
+    height: auto; /* Let content define height */
+    margin: 0;
+    padding: 0;
 }
 
 .flexbox-container {
@@ -70,7 +68,7 @@ body {
     justify-content: flex-start;
     min-width: 400px;
     max-width: 700px;
-    width: auto;
+    width: 100%;
     margin: 0;
     padding: 0;
     background: transparent;
@@ -130,24 +128,51 @@ body {
     width: 100%;
 }
 
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-start; /* Top align content */
+    margin: 32px 0 0 0; /* Larger top margin */
+    width: 700px;        /* Much wider */
+    min-width: 400px;
+    z-index: 2;
+    height: auto;
+}
+
 .profile-img {
-    height: 80px;            /* smaller image height */
+    height: 420px;       /* Much taller image */
     width: 100%;
     background-image: url('/images/doggo.png');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: left;
+    background-position: center;
     display: block;
 }
 
 .profile-txt {
-    width: 80%;
-    height: auto;            /* let text wrap naturally */
+    width: 95%;
     font-family: monospace;
     font-weight: bold;
-    font-size: 0.55rem;      /* smaller font */
+    font-size: 1.5rem;   /* Much larger font */
     color: #c6c8d3;
     text-shadow: 4px 6px 16px #000c, 0 2px 8px #000a;
-    margin-top: 8px;         /* smaller gap */
+    margin-top: 24px;    /* Larger gap */
+}
+
+.site-nav {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-family: monospace;
+    font-size: 1.1rem;
+}
+.site-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 0.5em;
+    transition: color 0.2s;
+}
+.site-nav a:hover {
+    color: #6270e9;
 }
 
